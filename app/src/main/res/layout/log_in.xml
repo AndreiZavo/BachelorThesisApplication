@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.thesisapplication.login.LogInViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/log_in_layout"
         android:layout_width="match_parent"
@@ -133,6 +139,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/no_account"
             app:layout_constraintTop_toBottomOf="@+id/login_btn"
+            android:onClick="@{() -> viewModel.onSignUpLink()}"
             tools:text="@string/go_to_sign_up" />
 
 
