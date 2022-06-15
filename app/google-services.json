@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "166507383311",
+    "project_id": "smart-bites-login",
+    "storage_bucket": "smart-bites-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166507383311:android:1dc024fd67754df4a7317a",
+        "android_client_info": {
+          "package_name": "com.example.thesisapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166507383311-2pndp246asov1cnqj4s21akr6600glkb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thesisapplication",
+            "certificate_hash": "5c2a97716d9329c64d0de84d4ee44d126b6b1f53"
+          }
+        },
+        {
+          "client_id": "166507383311-7f0t2bba59jrh09ffbrapaum7csjhriq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALN6u5X8Pj9YmlOpPRe1qLdYthbxaQtVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166507383311-7f0t2bba59jrh09ffbrapaum7csjhriq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

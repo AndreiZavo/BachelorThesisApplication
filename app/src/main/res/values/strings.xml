@@ -21,5 +21,17 @@
     <string name="already_have_an_account"> Already have an account? </string>
     <string name="go_to_sign_in"> Let\'s sign you in </string>
 
+    <!-- Bottom navigation menu titles -->
+    <string name="home_screen_title">Home</string>
+    <string name="search_screen_title">Search</string>
+    <string name="account_screen_title">Account</string>
+
+    <!-- Home screen strings -->
+    <string name="welcome_home_screen"> Hello, Andrei! </string>
+    <string name="frontal_banner_text"> See our week\'s best rated recipes </string>
+    <string name="frontal_banner_btn"> Browse recipes </string>
+    <string name="first_time_customer"> You haven\'t rated any recipes yet, so we give you our top choices: </string>
+    <string name="recurring_customer">  Based on your recent likes, we think you might like these: </string>
+    <string name="thirty_minute_recipe"> 30-minute recipes </string>
 
 </resources>
