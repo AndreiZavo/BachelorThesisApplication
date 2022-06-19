@@ -7,26 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.thesisapplication.R
+import com.example.thesisapplication.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
+    private val viewModel: HomeViewModel by lazy {
+        ViewModelProvider(this)[HomeViewModel::class.java]
     }
-
-    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
-    }
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        val binding = HomeFragmentBinding.inflate(inflater)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+//        binding.recommendendedRecipeList.adapter = RecipeAdapter()
+        setHasOptionsMenu(true)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
+        return binding.root
     }
 
 }

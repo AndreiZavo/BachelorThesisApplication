@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.thesisapplication.network.RecipeProperty" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="202dp"
+            android:layout_height="262dp"
+            android:layout_centerHorizontal="true"
+            android:innerRadius="10dp"
+            android:shape="ring"
+            android:thicknessRatio="4"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="205dp"
+                android:layout_height="262dp"
+                android:contentDescription="@string/recipe_instance"
+                android:foreground="@drawable/image_overlay"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/pizza_image" />
+
+            <ImageButton
+                android:id="@+id/save_recipe_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="48dp"
+                android:background="@null"
+                android:contentDescription="@string/save_recipe_btn"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="@dimen/small_spacing"
+                app:srcCompat="@drawable/save_recipe_btn"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/like_recipe_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@null"
+                android:contentDescription="@string/like_recipe_btn"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="@dimen/small_spacing"
+                app:srcCompat="@drawable/like_recipe_btn"
+                app:tint="@color/white" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/presentation_text_style"
+            android:layout_marginStart="0dp"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_spacing"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@{recipe.name}"
+            android:textSize="@dimen/small_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Veggie Tacos with avocado and chilly sauce" />
+
+        <TextView
+            android:id="@+id/recipe_time_to_prepare"
+            style="@style/presentation_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="0dp"
+            android:drawablePadding="@dimen/small_spacing"
+            android:text="@{recipe.minutes}"
+            android:textSize="@dimen/small_text_size"
+            app:drawableStartCompat="@drawable/ic_clock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="30 minutes" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

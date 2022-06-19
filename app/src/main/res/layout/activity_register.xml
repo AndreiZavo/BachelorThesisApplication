@@ -6,7 +6,7 @@
         android:id="@+id/register_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RegisterActivity">
+        tools:context=".authentification.RegisterActivity">
 
         <ImageView
             android:id="@+id/sign_up_img"

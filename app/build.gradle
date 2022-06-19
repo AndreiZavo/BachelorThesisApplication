@@ -91,4 +91,7 @@ dependencies {
     //Firebase Analytics
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
+    //Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }
