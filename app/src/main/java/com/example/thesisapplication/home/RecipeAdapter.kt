@@ -14,17 +14,17 @@ class RecipeAdapter : ListAdapter<RecipeProperty, RecipeAdapter.RecipeViewHolder
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: RecipeProperty) {
             binding.recipe = recipe
-            binding.executePendingBindings()
+             binding.executePendingBindings()
         }
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<RecipeProperty>() {
         override fun areItemsTheSame(oldItem: RecipeProperty, newItem: RecipeProperty): Boolean {
-            return oldItem == newItem
+            return oldItem === newItem
         }
 
         override fun areContentsTheSame(oldItem: RecipeProperty, newItem: RecipeProperty): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.recipe_id == newItem.recipe_id
         }
     }
 

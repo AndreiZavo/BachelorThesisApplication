@@ -37,5 +37,15 @@
     <string name="save_recipe_btn">save recipe button</string>
     <string name="like_recipe_btn">like recipe button</string>
     <string name="thirty_minute_recipes">30-minute recipes</string>
+    <string name="search_bar_placeholder">Search for a recipe...</string>
+    <string name="back_button">Back button</string>
+    <string name="rating_stars">Rating stars</string>
+    <string name="ingredients_textview">Ingredients  •</string>
+    <string name="recipe_description"> Description </string>
+    <string name="recipe_nutrition">Nutrition (per serving)</string>
+    <string name="steps_textview">Steps •</string>
+    <string name="user_account_name">Andrei Iacob</string>
+    <string name="account_email_address">andrei_iacob@yahoo.com</string>
+    <string name="edit_profile_btn">Edit profile</string>
 
 </resources>

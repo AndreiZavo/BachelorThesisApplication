@@ -14,9 +14,13 @@ class HomeViewModel : ViewModel() {
     val recipes : LiveData<List<RecipeProperty>>
         get() = _recipes
 
-    private val _response = MutableLiveData<String>()
-    val response : LiveData<String>
-        get() = _response
+//    private val _underThirtyRecipes = MutableLiveData<List<RecipeProperty>>()
+//    val underThirtyRecipes: LiveData<List<RecipeProperty>>
+//        get() = _underThirtyRecipes
+
+    private val _status = MutableLiveData<String>()
+    val status : LiveData<String>
+        get() = _status
 
     init {
         getRecipes()
@@ -26,17 +30,20 @@ class HomeViewModel : ViewModel() {
         viewModelScope.launch {
             try{
                 val listResult = RecipeApi.retrofitService.getRecipes()
+                //val underThirtyListResult = RecipeApi.retrofitService.getRecipesByMinutes(30)
                 if(listResult.isNotEmpty()){
                     _recipes.value = listResult
-                    _response.value = "Success: ${listResult.size} recipes retrieved"
+                    //_underThirtyRecipes.value = underThirtyListResult
+                    _status.value = "Success ${listResult.size} fetched"
                 }
                 else{
-                    _response.value = "Something bad happened"
-                    throw Exception("List has problems")
+                    _status.value = "Internal code error"
+                    throw Exception("Lists has problems")
                 }
             } catch (e: Exception){
                 _recipes.value = ArrayList()
-                _response.value = e.message
+                //_underThirtyRecipes.value = ArrayList()
+                _status.value = e.message
             }
         }
     }

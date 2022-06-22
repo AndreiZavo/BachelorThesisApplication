@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
         val binding = HomeFragmentBinding.inflate(inflater)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-//        binding.recommendendedRecipeList.adapter = RecipeAdapter()
+        binding.recommendendedRecipeList.adapter = RecipeAdapter()
         setHasOptionsMenu(true)
 
         return binding.root
