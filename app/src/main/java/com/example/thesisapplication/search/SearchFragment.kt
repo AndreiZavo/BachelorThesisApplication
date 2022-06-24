@@ -1,32 +1,28 @@
 package com.example.thesisapplication.search
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.thesisapplication.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.thesisapplication.databinding.SearchFragmentBinding
 
 class SearchFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SearchFragment()
+    private val viewModel: SearchViewModel by lazy {
+        ViewModelProvider(this)[SearchViewModel::class.java]
     }
-
-    private lateinit var viewModel: SearchViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.search_fragment, container, false)
-    }
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+        val binding = SearchFragmentBinding.inflate(inflater)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        binding.searchableRecipeList.adapter = SearchRecipeAdapter()
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
-        // TODO: Use the ViewModel
+        return binding.root
     }
 
 }

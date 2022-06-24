@@ -8,19 +8,25 @@ import com.example.thesisapplication.network.RecipeApi
 import com.example.thesisapplication.network.RecipeProperty
 import kotlinx.coroutines.launch
 
+enum class RecipeApiStatus { LOADING, ERROR, DONE }
+
 class HomeViewModel : ViewModel() {
 
     private val _recipes = MutableLiveData<List<RecipeProperty>>()
-    val recipes : LiveData<List<RecipeProperty>>
+    val recipes: LiveData<List<RecipeProperty>>
         get() = _recipes
 
 //    private val _underThirtyRecipes = MutableLiveData<List<RecipeProperty>>()
 //    val underThirtyRecipes: LiveData<List<RecipeProperty>>
 //        get() = _underThirtyRecipes
 
-    private val _status = MutableLiveData<String>()
-    val status : LiveData<String>
+    private val _status = MutableLiveData<RecipeApiStatus>()
+    val status: LiveData<RecipeApiStatus>
         get() = _status
+
+    private val _navigateToSelectedRecipe = MutableLiveData<RecipeProperty?>()
+    val navigateToSelectedRecipe : LiveData<RecipeProperty?>
+        get() = _navigateToSelectedRecipe
 
     init {
         getRecipes()
@@ -28,24 +34,31 @@ class HomeViewModel : ViewModel() {
 
     private fun getRecipes() {
         viewModelScope.launch {
-            try{
+            try {
+                _status.value = RecipeApiStatus.LOADING
                 val listResult = RecipeApi.retrofitService.getRecipes()
                 //val underThirtyListResult = RecipeApi.retrofitService.getRecipesByMinutes(30)
-                if(listResult.isNotEmpty()){
+                if (listResult.isNotEmpty()) {
                     _recipes.value = listResult
                     //_underThirtyRecipes.value = underThirtyListResult
-                    _status.value = "Success ${listResult.size} fetched"
-                }
-                else{
-                    _status.value = "Internal code error"
+                    _status.value = RecipeApiStatus.DONE
+                } else {
                     throw Exception("Lists has problems")
                 }
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 _recipes.value = ArrayList()
                 //_underThirtyRecipes.value = ArrayList()
-                _status.value = e.message
+                _status.value = RecipeApiStatus.ERROR
             }
         }
+    }
+
+    fun displayRecipeDetails(recipeProperty: RecipeProperty){
+        _navigateToSelectedRecipe.value = recipeProperty
+    }
+
+    fun displayRecipeDetailsComplete(){
+        _navigateToSelectedRecipe.value = null
     }
 
 }

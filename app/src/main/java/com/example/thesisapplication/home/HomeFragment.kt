@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.thesisapplication.R
 import com.example.thesisapplication.databinding.HomeFragmentBinding
 
@@ -21,7 +23,18 @@ class HomeFragment : Fragment() {
         val binding = HomeFragmentBinding.inflate(inflater)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        binding.recommendendedRecipeList.adapter = RecipeAdapter()
+        binding.recommendendedRecipeList.adapter = RecipeAdapter(RecipeAdapter.OnClickListener {
+            viewModel.displayRecipeDetails(it)
+        })
+
+        viewModel.navigateToSelectedRecipe.observe(viewLifecycleOwner, Observer {
+            if(null != it){
+                this.findNavController().navigate(HomeFragmentDirections
+                    .actionHomeFragmentToSingleItemFragment(it))
+                viewModel.displayRecipeDetailsComplete()
+            }
+        })
+
         setHasOptionsMenu(true)
 
         return binding.root

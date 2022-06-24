@@ -1,32 +1,30 @@
 package com.example.thesisapplication.single_item
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.thesisapplication.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.thesisapplication.databinding.SingleItemFragmentBinding
 
 class SingleItemFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SingleItemFragment()
-    }
-
-    private lateinit var viewModel: SingleItemViewModel
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.single_item_fragment, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
+
+        val application = requireNotNull(activity).application
+        val binding = SingleItemFragmentBinding.inflate(inflater)
+        binding.lifecycleOwner = this
+
+        val recipe = SingleItemFragmentArgs.fromBundle(requireArguments()).selectedRecipe
+        val viewModelFactory = SingleItemViewModelFactory(recipe, application)
+        binding.viewModel = ViewModelProvider(
+            this, viewModelFactory)[SingleItemViewModel::class.java]
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SingleItemViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }

@@ -47,5 +47,6 @@
     <string name="user_account_name">Andrei Iacob</string>
     <string name="account_email_address">andrei_iacob@yahoo.com</string>
     <string name="edit_profile_btn">Edit profile</string>
+    <string name="search_recipe_response">Search recipe response</string>
 
 </resources>

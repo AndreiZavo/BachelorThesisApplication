@@ -1,4 +1,4 @@
-package com.example.thesisapplication.home
+package com.example.thesisapplication.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,16 +6,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.thesisapplication.databinding.RecipePropertyFragmentBinding
+import com.example.thesisapplication.databinding.SearchItemBinding
+import com.example.thesisapplication.home.RecipeAdapter
 import com.example.thesisapplication.network.RecipeProperty
 
-class RecipeAdapter(private val onClickListener: OnClickListener) :
-    ListAdapter<RecipeProperty, RecipeAdapter.RecipeViewHolder>(DiffCallback) {
+class SearchRecipeAdapter: ListAdapter<RecipeProperty, SearchRecipeAdapter.RecipeViewHolder>(DiffCallback) {
 
-    class RecipeViewHolder(private var binding: RecipePropertyFragmentBinding) :
+    class RecipeViewHolder(private var binding: SearchItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: RecipeProperty) {
             binding.recipe = recipe
-             binding.executePendingBindings()
+            binding.executePendingBindings()
         }
     }
 
@@ -31,20 +32,12 @@ class RecipeAdapter(private val onClickListener: OnClickListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         return RecipeViewHolder(
-            RecipePropertyFragmentBinding.inflate(LayoutInflater.from(parent.context))
+            SearchItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = getItem(position)
-        holder.itemView.setOnClickListener {
-            onClickListener.onClick(recipe)
-        }
         holder.bind(recipe)
     }
-
-    class OnClickListener(val clickListener: (recipeProperty: RecipeProperty) -> Unit) {
-        fun onClick(recipeProperty: RecipeProperty) = clickListener(recipeProperty)
-    }
-
 }
