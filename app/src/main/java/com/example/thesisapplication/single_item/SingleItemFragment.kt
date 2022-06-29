@@ -23,6 +23,9 @@ class SingleItemFragment : Fragment() {
         binding.viewModel = ViewModelProvider(
             this, viewModelFactory)[SingleItemViewModel::class.java]
 
+
+
+
         return binding.root
     }
 

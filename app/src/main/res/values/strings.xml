@@ -48,5 +48,10 @@
     <string name="account_email_address">andrei_iacob@yahoo.com</string>
     <string name="edit_profile_btn">Edit profile</string>
     <string name="search_recipe_response">Search recipe response</string>
+    <string name="favorite_tab">Your favorite recipes\nwill be hear</string>
+    <string name="saved_tab">Your saved recipes\nwill be hear</string>
+    <string name="my_reviews_tab">Your reviews\nwill be hear</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

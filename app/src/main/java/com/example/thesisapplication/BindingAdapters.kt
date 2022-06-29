@@ -32,8 +32,6 @@ fun bindStatus(statusImageView: ImageView, status: RecipeApiStatus?){
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_connection_error)
         }
-        RecipeApiStatus.DONE -> {
-            statusImageView.visibility = View.GONE
-        }
+        else -> statusImageView.visibility = View.GONE
     }
 }

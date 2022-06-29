@@ -14,6 +14,10 @@ class SearchViewModel : ViewModel() {
     val searchRecipeList : LiveData<List<RecipeProperty>>
         get() = _searchRecipeList
 
+    private val _navigateToSelectedRecipe = MutableLiveData<RecipeProperty?>()
+    val navigateToSelectedRecipe : LiveData<RecipeProperty?>
+        get() = _navigateToSelectedRecipe
+
     init {
         getSearchRecipes()
     }
@@ -33,5 +37,30 @@ class SearchViewModel : ViewModel() {
             }
         }
     }
+
+    fun getSearchedRecipesByName(name: String){
+        viewModelScope.launch {
+            try{
+                val listResult = RecipeApi.retrofitService.getRecipesByName(name)
+                if (listResult.isNotEmpty()){
+                    _searchRecipeList.value = listResult
+                }
+                else{
+                    throw Exception("List has a search problem")
+                }
+            }catch (e: Exception){
+                _searchRecipeList.value = ArrayList()
+            }
+        }
+    }
+
+    fun displaySelectedRecipe(recipeProperty: RecipeProperty){
+        _navigateToSelectedRecipe.value = recipeProperty
+    }
+
+    fun displaySelectedRecipeCompleted(){
+        _navigateToSelectedRecipe.value = null
+    }
+
 
 }

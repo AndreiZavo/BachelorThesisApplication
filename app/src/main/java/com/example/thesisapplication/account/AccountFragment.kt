@@ -6,27 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.thesisapplication.R
+import com.example.thesisapplication.account.tablayout.FavoriteRecipesFragment
+import com.example.thesisapplication.account.tablayout.MyReviewsFragment
+import com.example.thesisapplication.account.tablayout.SavedRecipesFragment
+import com.example.thesisapplication.account.tablayout.TabAdapter
+import com.example.thesisapplication.databinding.AccountFragmentBinding
 
 class AccountFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = AccountFragment()
+    private val viewModel: AccountViewModel by lazy {
+        ViewModelProvider(this)[AccountViewModel::class.java]
     }
-
-    private lateinit var viewModel: AccountViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.account_fragment, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val binding = AccountFragmentBinding.inflate(inflater)
+
+        binding.viewModel = viewModel
+        binding.viewPager.adapter = setupTabs()
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
-        // TODO: Use the ViewModel
+
+    private fun setupTabs(): TabAdapter {
+        val adapter = TabAdapter(childFragmentManager)
+        adapter.addFragment(FavoriteRecipesFragment(), "Favorites")
+        adapter.addFragment(SavedRecipesFragment(), "Saved")
+        adapter.addFragment(MyReviewsFragment(), "My Reviews")
+        return adapter
     }
 
 }

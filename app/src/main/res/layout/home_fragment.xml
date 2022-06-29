@@ -96,7 +96,7 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:layout_marginTop="32dp"-->
-<!--                android:text="@{viewModel.status}"-->
+<!--                android:text="@{viewModel.errorText}"-->
 <!--                tools:text="Nothing is showing"-->
 <!--                android:textSize="18sp"-->
 <!--                android:fontFamily="@font/nunito_extrabold"-->

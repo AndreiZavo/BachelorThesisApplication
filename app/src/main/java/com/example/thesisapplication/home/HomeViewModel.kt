@@ -28,6 +28,10 @@ class HomeViewModel : ViewModel() {
     val navigateToSelectedRecipe : LiveData<RecipeProperty?>
         get() = _navigateToSelectedRecipe
 
+    private val _errorText = MutableLiveData<String>()
+    val errorText : LiveData<String>
+        get() = _errorText
+
     init {
         getRecipes()
     }
@@ -49,6 +53,7 @@ class HomeViewModel : ViewModel() {
                 _recipes.value = ArrayList()
                 //_underThirtyRecipes.value = ArrayList()
                 _status.value = RecipeApiStatus.ERROR
+                _errorText.value = e.message
             }
         }
     }

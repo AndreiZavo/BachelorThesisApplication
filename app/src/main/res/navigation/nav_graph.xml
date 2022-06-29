@@ -22,7 +22,11 @@
         android:id="@+id/search_fragment"
         android:name="com.example.thesisapplication.search.SearchFragment"
         android:label="search"
-        tools:layout="@layout/search_fragment" />
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_search_fragment_to_singleItemFragment"
+            app:destination="@id/singleItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/singleItemFragment"
         android:name="com.example.thesisapplication.single_item.SingleItemFragment"

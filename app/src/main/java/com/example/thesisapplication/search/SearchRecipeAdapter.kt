@@ -10,7 +10,8 @@ import com.example.thesisapplication.databinding.SearchItemBinding
 import com.example.thesisapplication.home.RecipeAdapter
 import com.example.thesisapplication.network.RecipeProperty
 
-class SearchRecipeAdapter: ListAdapter<RecipeProperty, SearchRecipeAdapter.RecipeViewHolder>(DiffCallback) {
+class SearchRecipeAdapter(val onClickListener: OnClickListener):
+    ListAdapter<RecipeProperty, SearchRecipeAdapter.RecipeViewHolder>(DiffCallback) {
 
     class RecipeViewHolder(private var binding: SearchItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -38,6 +39,13 @@ class SearchRecipeAdapter: ListAdapter<RecipeProperty, SearchRecipeAdapter.Recip
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(recipe)
+        }
         holder.bind(recipe)
+    }
+
+    class OnClickListener(val clickListener: (recipeProperty: RecipeProperty) -> Unit){
+        fun onClick(recipeProperty: RecipeProperty) = clickListener(recipeProperty)
     }
 }

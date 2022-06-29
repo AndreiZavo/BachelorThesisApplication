@@ -41,6 +41,9 @@ interface RecipeApiService {
     @GET("get-by-minutes")
     suspend fun getRecipesByMinutes(@Query("minutes") minutes: Int) : List<RecipeProperty>
 
+    @GET("get-by-name")
+    suspend fun getRecipesByName(@Query("name") name: String): List<RecipeProperty>
+
     @GET("get_content_based_recommendation/{appreciated_recipe_id}")
     suspend fun getContentBasedRecommendedRecipes() : List<RecipeProperty>
 
