@@ -71,7 +71,7 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="@dimen/small_spacing"
-                app:srcCompat="@drawable/like_recipe_btn"
+                android:src="@drawable/ic_like"
                 app:tint="@color/white" />
 
         </com.google.android.material.card.MaterialCardView>

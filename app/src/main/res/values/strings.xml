@@ -31,7 +31,7 @@
     <string name="frontal_banner_text"> See our week\'s best \nrated recipe </string>
     <string name="frontal_banner_btn"> Check recipe </string>
     <string name="first_time_customer"> You haven\'t rated any recipes yet, so \nwe give you our top choices: </string>
-    <string name="recurring_customer">  Based on your recent likes, we think you might like these: </string>
+    <string name="recurring_customer">  Based on your recent likes, we\nthink you might like these: </string>
     <string name="thirty_minute_recipe"> 30-minute recipes </string>
     <string name="recipe_instance">Recipe instance</string>
     <string name="save_recipe_btn">save recipe button</string>

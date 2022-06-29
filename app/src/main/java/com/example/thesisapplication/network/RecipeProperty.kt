@@ -17,4 +17,5 @@ class RecipeProperty(
     val n_steps: Int,
     val steps: String
 ) : Parcelable {
+
 }

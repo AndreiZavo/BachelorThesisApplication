@@ -40,16 +40,12 @@ class SearchViewModel : ViewModel() {
 
     fun getSearchedRecipesByName(name: String){
         viewModelScope.launch {
-            try{
-                val listResult = RecipeApi.retrofitService.getRecipesByName(name)
-                if (listResult.isNotEmpty()){
-                    _searchRecipeList.value = listResult
-                }
-                else{
-                    throw Exception("List has a search problem")
-                }
-            }catch (e: Exception){
-                _searchRecipeList.value = ArrayList()
+            val listResult = RecipeApi.retrofitService.getRecipesByName(name)
+            if (listResult.isNotEmpty()){
+                _searchRecipeList.value = listResult
+            }
+            else{
+                throw Exception("List has a search problem")
             }
         }
     }

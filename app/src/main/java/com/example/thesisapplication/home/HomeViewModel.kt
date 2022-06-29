@@ -32,6 +32,10 @@ class HomeViewModel : ViewModel() {
     val errorText : LiveData<String>
         get() = _errorText
 
+    private val _bestRecipe = MutableLiveData<RecipeProperty>()
+    val bestRecipe : LiveData<RecipeProperty>
+        get() = _bestRecipe
+
     init {
         getRecipes()
     }

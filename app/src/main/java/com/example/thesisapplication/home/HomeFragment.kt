@@ -2,14 +2,21 @@ package com.example.thesisapplication.home
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.SystemClock.sleep
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.thesisapplication.R
 import com.example.thesisapplication.databinding.HomeFragmentBinding
+import com.example.thesisapplication.network.RecipeApi
+import com.example.thesisapplication.network.RecipeProperty
+import com.google.android.gms.tasks.Tasks.await
+import kotlinx.coroutines.delay
+import retrofit2.Retrofit
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +41,20 @@ class HomeFragment : Fragment() {
                 viewModel.displayRecipeDetailsComplete()
             }
         })
+
+        binding.bannerBtn.setOnClickListener {
+//            val pizza = viewModel.bestRecipe
+//            val bundle = Bundle()
+//            bundle.putParcelable("pizzaTa", pizza.value)
+//
+//            view?.let{
+//                Navigation.findNavController(it)
+//                    .navigate(R.id.action_home_fragment_to_singleItemFragment, bundle)
+//            }
+
+            binding.recommendationCategoryTextview.text =
+                "Based on your recent likes, we\nthink you might like these:"
+        }
 
         setHasOptionsMenu(true)
 
