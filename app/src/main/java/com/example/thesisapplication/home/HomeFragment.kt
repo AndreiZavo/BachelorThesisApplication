@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -42,16 +43,8 @@ class HomeFragment : Fragment() {
             }
         })
 
-        binding.bannerBtn.setOnClickListener {
-//            val pizza = viewModel.bestRecipe
-//            val bundle = Bundle()
-//            bundle.putParcelable("pizzaTa", pizza.value)
-//
-//            view?.let{
-//                Navigation.findNavController(it)
-//                    .navigate(R.id.action_home_fragment_to_singleItemFragment, bundle)
-//            }
-
+        binding.recommendationCategoryTextview.setOnClickListener {
+            viewModel.getRecommendedRecipes()
             binding.recommendationCategoryTextview.text =
                 "Based on your recent likes, we\nthink you might like these:"
         }
@@ -60,5 +53,4 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
-
 }

@@ -45,7 +45,7 @@ interface RecipeApiService {
     suspend fun getRecipesByName(@Query("name") name: String): List<RecipeProperty>
 
     @GET("get_content_based_recommendation/{appreciated_recipe_id}")
-    suspend fun getContentBasedRecommendedRecipes() : List<RecipeProperty>
+    suspend fun getContentBasedRecommendedRecipes(@Path("appreciated_recipe_id") recipe_id: Int) : List<RecipeProperty>
 
 
 }

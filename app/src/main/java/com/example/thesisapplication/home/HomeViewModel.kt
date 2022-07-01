@@ -62,6 +62,17 @@ class HomeViewModel : ViewModel() {
         }
     }
 
+    fun getRecommendedRecipes(){
+        viewModelScope.launch {
+            val listResult = RecipeApi.retrofitService.getContentBasedRecommendedRecipes(70971)
+            if (listResult.isNotEmpty()) {
+                _recipes.value = listResult
+            } else {
+                throw Exception("Lists has problems")
+            }
+        }
+    }
+
     fun displayRecipeDetails(recipeProperty: RecipeProperty){
         _navigateToSelectedRecipe.value = recipeProperty
     }
