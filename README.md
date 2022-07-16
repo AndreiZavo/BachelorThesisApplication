@@ -25,8 +25,13 @@ The concept of the system is of an easy to use mobile application focused on the
 In order for the user to utilise the application, first step is to enter a set of valid credentials. The users log with the already created account or they sign up for a new one and then they can log in. From the backend potint of view, this proccess is possible with the help of the Firebase library.
 
 ### Home page
-
-Home page is where the collections of recipes, including the personalised one, can be viewed and inspected
+<table style="margin-left:auto;margin-right:auto;width:98%">
+  <tr>
+   <td> <img src="./mockups/Homepage.png" style="height:50%;width:250px; padding-left:250px"> </td>
+   <td> <img src="./mockups/First time on Homepage.png" style="height:50%;width:250px"> </td>
+ </tr> 
+</table>
+Home page is where the collections of recipes, including the personalised one, can be viewed and inspected. At the top of the screen there is a banner that displays the most appreciated recipe of the week, followed by a collection of recipe recommendations tailered for each user, and than, other recipe collections that may be of help. 
 
 ### Recipe page
 
