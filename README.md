@@ -19,6 +19,24 @@ The concept of the system is of an easy to use mobile application focused on the
  </tr> 
 </table>
 ![Log in](app/src/main/java/com/example/thesisapplication/mockups/Log in.png)
-In order for the user to utilise the application, first step is to enter a set of valid credentials. 
+
+In order for the user to utilise the application, first step is to enter a set of valid credentials. The users log with the already created account or they sign up for a new one and then they can log in. From the backend potint of view, this proccess is possible with the help of the Firebase library.
+
+### Home page
+
+Home page is where the collections of recipes, including the personalised one, can be viewed and inspected
+
+### Recipe page
+
+Recipe page is where the user can check all the details of a specific recipe and follow them in the process of cooking it
+
+
+### Account page
+
+Account page is where users can view their saved and liked recipes, as well see their given ratings and modify their profile
+
+### Search page
+
+Search page is where the user can search after a certain recipe
 
 ## Conclusion
