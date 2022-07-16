@@ -81,7 +81,8 @@ Account page is where users can view their saved and liked recipes, as well see 
 </table>
 
 Search page is where the user can search after a certain recipe by name or category. 
-
+<br>
+<br>
 ## Conclusion  
 
 The initial point from which this thesis started was the need for a modern recommendation system based on artificial intelligence, preferably in the form of a mobile application given the fact that during the day, the phone is the main device with which people interact.
