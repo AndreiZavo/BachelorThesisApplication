@@ -15,10 +15,10 @@ The concept of the system is of an easy to use mobile application focused on the
 ### Login & Register
 <table style="margin-left:auto;margin-right:auto;">
   <tr>
-   <td> <img src="./Mokups/Login.png"> </td>
-   <td> <img src="./Mockups/Register.png"> </td>
+   <td> <img src="./app/src/main/java/com/example/thesisapplication/mockups/Log in.png"> </td>
  </tr> 
 </table>
+![Log in](app/src/main/java/com/example/thesisapplication/mockups/Log in.png)
 In order for the user to utilise the application, first step is to enter a set of valid credentials. 
 
 ## Conclusion
