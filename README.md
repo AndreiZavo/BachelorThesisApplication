@@ -59,10 +59,20 @@ Account page is where users can view their saved and liked recipes, as well see 
 ### Search page
 
 <table style="margin-left:auto;margin-right:auto;width:98%">
-  <tr style="width:100%">
-   <td> <img src="./mockups/Search Page.png" style="height:50%;width:250px"> </td>
+  <tr>
+   <td> 
+    <center>
+      <img src="./mockups/Search Page.png" style="height:40%;width:20%"> 
+    </center>
+   </td>
  </tr> 
 </table>
 Search page is where the user can search after a certain recipe by name or category. 
 
-## Conclusion
+## Conclusion  
+
+The initial point from which this thesis started was the need for a modern recommendation system based on artificial intelligence, preferably in the form of a mobile application given the fact that during the day, the phone is the main device with which people interact.
+
+There is still some room for improvement that can be developed in the future. First of all, the algorithm of the recommendation systems can be improved regarding its efficiency and performance, by using other recommendation techniques that are more revolutionary. Moreover, the number of functionalities present in this first version of the application is quite small, so as time goes on, other features can be created on top of existing ones to make the user experience even more satisfying. 
+
+All things considered, it is safe to say that Smart Bites is a first-version successful mobile application that succeeds in its quest to resolve the daily problems that come with food recipe searching and nutrition preferences.
