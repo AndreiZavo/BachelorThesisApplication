@@ -26,9 +26,9 @@ In order for the user to utilise the application, first step is to enter a set o
 
 ### Home page
 <table style="margin-left:auto;margin-right:auto;width:98%">
-  <tr>
-   <td> <img src="./mockups/Homepage.png" style="height:50%;width:250px; padding-left:250px"> </td>
-   <td> <img src="./mockups/First time on Homepage.png" style="height:50%;width:250px"> </td>
+  <tr style="width: 100%">
+   <td> <img src="./mockups/Homepage.png" style="height:50%;width:250px"> </td>
+   <td> <img src="./mockups/First time on Homepage.png" style="height:50%;width:250px;floar:right"> </td>
  </tr> 
 </table>
 Home page is where the collections of recipes, including the personalised one, can be viewed and inspected. At the top of the screen there is a banner that displays the most appreciated recipe of the week, followed by a collection of recipe recommendations tailered for each user, and than, other recipe collections that may be of help. 
