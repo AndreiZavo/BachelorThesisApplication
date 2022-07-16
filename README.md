@@ -31,19 +31,38 @@ In order for the user to utilise the application, first step is to enter a set o
    <td stlye="width:50%;align:center"> <img src="./mockups/First time on Homepage.png" style="height:50%;width:250px"> </td>
  </tr> 
 </table>
+
 Home page is where the collections of recipes, including the personalised one, can be viewed and inspected. At the top of the screen there is a banner that displays the most appreciated recipe of the week, followed by a collection of recipe recommendations tailered for each user, and than, other recipe collections that may be of help. 
 
 ### Recipe page
 
-Recipe page is where the user can check all the details of a specific recipe and follow them in the process of cooking it
+<table style="margin-left:auto;margin-right:auto;width:98%">
+  <tr style="width:100%">
+   <td stlye="width:50%;align:center"> <img src="./mockups/Recipe Page.png" style="height:50%;width:250px"> </td>
+   <td stlye="width:50%;align:center"> <img src="./mockups/Rated Recipe Page.png" style="height:50%;width:250px"> </td>
+ </tr> 
+</table>
+
+Recipe page is where the user can check all the details of a specific recipe and follow them in the process of cooking it. Each recipe comes with a name, a rating system, a list of nutritional values, a description, ingredients and steps of how to make it. 
 
 
 ### Account page
 
-Account page is where users can view their saved and liked recipes, as well see their given ratings and modify their profile
+<table style="margin-left:auto;margin-right:auto;width:98%">
+  <tr style="width:100%">
+   <td> <img src="./mockups/Account.png" style="height:50%;width:250px"> </td>
+ </tr> 
+</table>
+
+Account page is where users can view their saved and liked recipes, as well see their given ratings and modify their profile.
 
 ### Search page
 
-Search page is where the user can search after a certain recipe
+<table style="margin-left:auto;margin-right:auto;width:98%">
+  <tr style="width:100%">
+   <td> <img src="./mockups/Search Page.png" style="height:50%;width:250px"> </td>
+ </tr> 
+</table>
+Search page is where the user can search after a certain recipe by name or category. 
 
 ## Conclusion
