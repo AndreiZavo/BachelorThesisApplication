@@ -1,5 +1,5 @@
 # Smart Bites 🥧
-## The mobile application with autmated recommendation systems in the food spectrum
+## The mobile application with automated recommendation systems in the food spectrum
 
 ## Table of Contents
 * [Introduction](#introduction)
